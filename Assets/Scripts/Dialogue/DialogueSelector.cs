@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class DialogueSelector : MonoBehaviour
 {
     private int index = 0;
+    private DialogueRoot currentDialogueData;
     private List<DialogueChoice> dialogueChoices;
     private List<string> dialogueChoicesTextList;
     private List<string> dialogueChoicesIdList;
@@ -46,10 +47,11 @@ public class DialogueSelector : MonoBehaviour
         }
     }
 
-    public void AddDialogueChoice(string[] dialogueChoiceTextArray, string[] dialogueChoiceIdArray)
+    public void AddDialogueChoice(string[] dialogueChoiceTextArray, string[] dialogueChoiceIdArray, DialogueRoot dialogueData)
     {     
         dialogueChoicesTextList.Clear();        
-        dialogueChoicesIdList.Clear();        
+        dialogueChoicesIdList.Clear();
+        currentDialogueData = dialogueData;
         dialogueChoicesTextList.AddRange(dialogueChoiceTextArray);        
         dialogueChoicesIdList.AddRange(dialogueChoiceIdArray);        
         SpawnDialogueChoices();
@@ -57,6 +59,8 @@ public class DialogueSelector : MonoBehaviour
 
     private void SpawnDialogueChoices()
     {
+        ResetScrollToTop();
+
         if (dialogueChoicesTextList.Count == 0) // No choices to spawn
             return;
         
@@ -72,6 +76,7 @@ public class DialogueSelector : MonoBehaviour
     }
     public void ClearDialogueChoices()
     {
+        currentDialogueData = null;
         foreach (DialogueChoice choice in dialogueChoices)
         {
             Destroy(choice.gameObject);
@@ -81,7 +86,30 @@ public class DialogueSelector : MonoBehaviour
         dialogueChoicesIdList.Clear();
         index = 0;
     }
+    public void NextChoice()
+    {
+        DialogueEntry nextDialogue = FindNextDialogue(dialogueChoicesIdList[index]);
+        if (nextDialogue == null)
+        {
+            Debug.LogError("No dialogue found for choice ID: " + dialogueChoicesIdList[index]);
+            return;
+        }
+        DialogueManager.Instance.Next(nextDialogue.characterName, nextDialogue.dialogueText, nextDialogue.dialogueChoices, nextDialogue.dialogueChoicesId, currentDialogueData, null);
+    }
+    private DialogueEntry FindNextDialogue(string dialogueId)
+    {
+        DialogueEntry nextDialogue = null;
+        for (int i = 0; i< currentDialogueData.allDialogues.Length; i++)
+        {
+            if (currentDialogueData.allDialogues[i].dialogueId == dialogueId)
+            {
+                nextDialogue = currentDialogueData.allDialogues[i];
+                break;
+            }
+        }
 
+        return nextDialogue;
+    }
     private void MoveUpChoice()
     {
         Debug.Log("Up");
@@ -147,4 +175,6 @@ public class DialogueSelector : MonoBehaviour
         Canvas.ForceUpdateCanvases();   // IMPORTANT
         scrollRect.verticalNormalizedPosition = 1f;
     }
+
+
 }

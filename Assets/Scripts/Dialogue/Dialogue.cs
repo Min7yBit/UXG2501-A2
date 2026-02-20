@@ -24,13 +24,8 @@ public class Dialogue : MonoBehaviour
             return;
 
         DialogueEntry firstDialogue = dialogueData.allDialogues[0];
-        DialogueManager.Instance.ShowDialogue(firstDialogue.characterName, firstDialogue.dialogueText, firstDialogue.dialogueChoices, firstDialogue.dialogueChoicesId);
+        DialogueManager.Instance.ShowDialogue(firstDialogue.characterName, firstDialogue.dialogueText, firstDialogue.dialogueChoices, firstDialogue.dialogueChoicesId, dialogueData);
     }
-
-
-
-
-
 
 }
 

@@ -39,17 +39,17 @@ public class DialogueManager : MonoBehaviour
 
         if (isDialogueActive && next)
         {
-            Next("Name 2", "Dialogue Text 2", null);
+            dialogueSelector.NextChoice();
         }
     }
 
-    public void ShowDialogue(string name, string dialogue, string[] dialogueChoices, string[] dialogueChoicesId, Sprite portrait = null)
+    public void ShowDialogue(string name, string dialogue, string[] dialogueChoices, string[] dialogueChoicesId, DialogueRoot dialogueData, Sprite portrait = null)
     {        
         isDialogueActive = true;
         characterName.text = name;
         dialogueText.text = dialogue;
         dialoguePortrait.sprite = portrait;        
-        dialogueSelector.AddDialogueChoice(dialogueChoices, dialogueChoicesId);
+        dialogueSelector.AddDialogueChoice(dialogueChoices, dialogueChoicesId, dialogueData);
         dialogueBody.SetActive(true);
     }
 
@@ -63,8 +63,9 @@ public class DialogueManager : MonoBehaviour
         dialogueSelector.ClearDialogueChoices();
     }
 
-    public void Next(string name, string dialogue, Sprite portrait = null)
+    public void Next(string name, string dialogue, string[] dialogueChoices, string[] dialogueChoicesId, DialogueRoot dialogueData, Sprite portrait = null)
     {
-        Debug.Log("Next button pressed");
+        HideDialogue();
+        ShowDialogue(name, dialogue, dialogueChoices, dialogueChoicesId, dialogueData, portrait);
     }
 }
