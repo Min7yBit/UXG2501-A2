@@ -88,13 +88,19 @@ public class DialogueSelector : MonoBehaviour
     }
     public void NextChoice()
     {
+        if (dialogueChoicesTextList.Count == 0) // No choices to, just exit
+        {
+            DialogueManager.Instance.HideDialogue();
+            return;
+        }
+
         DialogueEntry nextDialogue = FindNextDialogue(dialogueChoicesIdList[index]);
         if (nextDialogue == null)
         {
             Debug.LogError("No dialogue found for choice ID: " + dialogueChoicesIdList[index]);
             return;
         }
-        DialogueManager.Instance.Next(nextDialogue.characterName, nextDialogue.dialogueText, nextDialogue.dialogueChoices, nextDialogue.dialogueChoicesId, currentDialogueData, null);
+        DialogueManager.Instance.Next(nextDialogue.characterName, nextDialogue.dialogueText, nextDialogue.dialogueChoices, nextDialogue.dialogueChoicesId, currentDialogueData);
     }
     private DialogueEntry FindNextDialogue(string dialogueId)
     {

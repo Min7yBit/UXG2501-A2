@@ -43,12 +43,12 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void ShowDialogue(string name, string dialogue, string[] dialogueChoices, string[] dialogueChoicesId, DialogueRoot dialogueData, Sprite portrait = null)
+    public void ShowDialogue(string name, string dialogue, string[] dialogueChoices, string[] dialogueChoicesId, DialogueRoot dialogueData)
     {        
         isDialogueActive = true;
         characterName.text = name;
         dialogueText.text = dialogue;
-        dialoguePortrait.sprite = portrait;        
+        dialoguePortrait.sprite = GetPortrait(name);        
         dialogueSelector.AddDialogueChoice(dialogueChoices, dialogueChoicesId, dialogueData);
         dialogueBody.SetActive(true);
     }
@@ -63,9 +63,27 @@ public class DialogueManager : MonoBehaviour
         dialogueSelector.ClearDialogueChoices();
     }
 
-    public void Next(string name, string dialogue, string[] dialogueChoices, string[] dialogueChoicesId, DialogueRoot dialogueData, Sprite portrait = null)
+    public void Next(string name, string dialogue, string[] dialogueChoices, string[] dialogueChoicesId, DialogueRoot dialogueData)
     {
         HideDialogue();
-        ShowDialogue(name, dialogue, dialogueChoices, dialogueChoicesId, dialogueData, portrait);
+        ShowDialogue(name, dialogue, dialogueChoices, dialogueChoicesId, dialogueData);
     }
+
+    public Sprite GetPortrait(string characterName)
+    {
+        string portraitFileName = "Sprites/" + characterName;
+
+        Sprite portrait = Resources.Load<Sprite>(portraitFileName);
+        if (portrait != null)
+        {
+            return portrait;
+        }
+        else
+        {
+            Debug.LogWarning("Portrait not found for character: " + characterName + " (Sprite must be same name as character name in JSON and placed under Resources/Sprites)");
+            return null;
+        }
+    }
+
+
 }
