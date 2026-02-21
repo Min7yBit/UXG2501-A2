@@ -88,10 +88,10 @@ public class DialogueSelector : MonoBehaviour
     }
     public void NextChoice()
     {
-        if (dialogueChoicesTextList.Count == 0) // No choices to, just exit
+        if (dialogueChoicesTextList.Count == 0 && dialogueChoicesIdList.Count == 0) // No choices to, just exit
         {
             DialogueManager.Instance.HideDialogue();
-            return;
+            return;            
         }
 
         DialogueEntry nextDialogue = FindNextDialogue(dialogueChoicesIdList[index]);

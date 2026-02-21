@@ -1,0 +1,92 @@
+{
+"allDialogues":
+[
+{
+  "dialogueId": "clue1_intro",
+  "characterName": "Police",
+  "dialogueText": "Victim sustained six stab wounds to the torso. Clean penetrations. Consistent force and spacing.",
+  "dialogueChoices": [
+	"On which side of the victim's body are the entry wounds located?"
+  ],
+  "dialogueChoicesId": [
+	"clue1_dialogue_1"
+  ]
+},
+
+{
+  "dialogueId": "clue1_dialogue_1",
+  "characterName": "Police",
+  "dialogueText": "All wounds are on the victim's right.",
+  "dialogueChoices": [
+  ],
+  "dialogueChoicesId": [
+	"clue1_dialogue_2"
+  ]
+},
+
+{
+  "dialogueId": "clue1_dialogue_2",
+  "characterName": "Prosecutor",
+  "dialogueText": "What does that imply?",
+  "dialogueChoices": [
+  ],
+  "dialogueChoicesId": [
+	"clue1_dialogue_3"
+  ]
+},
+
+{
+  "dialogueId": "clue1_dialogue_3",
+  "characterName": "Police",
+  "dialogueText": "It may suggest the attacker was left-handed… though it’s not absolute proof.",
+  "dialogueChoices": [
+  ],
+  "dialogueChoicesId": [
+	"clue1_dialogue_4"
+  ]
+},
+
+{
+  "dialogueId": "clue1_dialogue_4",
+  "characterName": "Prosecutor",
+  "dialogueText": "Is Ryan left-handed?",
+  "dialogueChoices": [
+  ],
+  "dialogueChoicesId": [
+	"clue1_dialogue_5"
+  ]
+},
+
+{
+  "dialogueId": "clue1_dialogue_5",
+  "characterName": "Police",
+  "dialogueText": "School records and witness statements indicate Ryan is right-handed.",
+  "dialogueChoices": [
+  ],
+  "dialogueChoicesId": [
+	"clue1_dialogue_6"
+  ]
+},
+
+{
+  "dialogueId": "clue1_dialogue_6",
+  "characterName": "Prosecutor",
+  "dialogueText": "Was this discrepancy investigated?",
+  "dialogueChoices": [
+  ],
+  "dialogueChoicesId": [
+	"clue1_dialogue_7"
+  ]
+},
+
+{
+  "dialogueId": "clue1_dialogue_7",
+  "characterName": "Police",
+  "dialogueText": "It was noted, but not considered significant.",
+  "dialogueChoices": [
+  ],
+  "dialogueChoicesId": [
+  ]
+}
+]
+}
