@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +17,7 @@ public class DialogueSelector : MonoBehaviour
     [SerializeField] private KeyCode downKey = KeyCode.DownArrow;
     [SerializeField] private ScrollRect scrollRect;
     [SerializeField] private RectTransform content;
+    [SerializeField] private TMP_Text nextText;
     private bool up => Input.GetKeyDown(upKey);
     private bool down => Input.GetKeyDown(downKey);
 
@@ -85,6 +87,7 @@ public class DialogueSelector : MonoBehaviour
         dialogueChoicesTextList.Clear();
         dialogueChoicesIdList.Clear();
         index = 0;
+        nextText.text = "Next (E)";
     }
     public void NextChoice()
     {
@@ -101,6 +104,10 @@ public class DialogueSelector : MonoBehaviour
             return;
         }
         DialogueManager.Instance.Next(nextDialogue.characterName, nextDialogue.dialogueText, nextDialogue.dialogueChoices, nextDialogue.dialogueChoicesId, currentDialogueData);
+        if (nextDialogue.dialogueChoicesId.Length == 0)
+        {
+            nextText.text = "Okay (E)";
+        }
     }
     private DialogueEntry FindNextDialogue(string dialogueId)
     {

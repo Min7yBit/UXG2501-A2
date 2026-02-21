@@ -1,0 +1,92 @@
+{
+"allDialogues":
+[
+{
+  "dialogueId": "clue6_intro",
+  "characterName": "Police",
+  "dialogueText": "A detached metal name tag reading “Ryan L.” found on the ground deeper inside the alley.",
+  "dialogueChoices": [
+	"Is this confirmed to belong to Ryan?"
+  ],
+  "dialogueChoicesId": [
+	"clue6_dialogue_1"
+  ]
+},
+
+{
+  "dialogueId": "clue6_dialogue_1",
+  "characterName": "Police",
+  "dialogueText": "Yes. School-issued name tag.",
+  "dialogueChoices": [
+  ],
+  "dialogueChoicesId": [
+	"clue6_dialogue_2"
+  ]
+},
+
+{
+  "dialogueId": "clue6_dialogue_2",
+  "characterName": "Prosecutor",
+  "dialogueText": "Was Ryan wearing it that morning?",
+  "dialogueChoices": [
+  ],
+  "dialogueChoicesId": [
+	"clue6_dialogue_3"
+  ]
+},
+
+{
+  "dialogueId": "clue6_dialogue_3",
+  "characterName": "Police",
+  "dialogueText": "Yes, their school uniform policy requires it.",
+  "dialogueChoices": [
+  ],
+  "dialogueChoicesId": [
+	"clue6_dialogue_4"
+  ]
+},
+
+{
+  "dialogueId": "clue6_dialogue_4",
+  "characterName": "Prosecutor",
+  "dialogueText": "Why would it be this far into the alley?",
+  "dialogueChoices": [
+  ],
+  "dialogueChoicesId": [
+	"clue6_dialogue_5"
+  ]
+},
+
+{
+  "dialogueId": "clue6_dialogue_5",
+  "characterName": "Police",
+  "dialogueText": "Likely torn off during the struggle.",
+  "dialogueChoices": [
+  ],
+  "dialogueChoicesId": [
+	"clue6_dialogue_6"
+  ]
+},
+
+{
+  "dialogueId": "clue6_dialogue_6",
+  "characterName": "Prosecutor",
+  "dialogueText": "Is there blood on it?",
+  "dialogueChoices": [
+  ],
+  "dialogueChoicesId": [
+	"clue6_dialogue_7"
+  ]
+},
+
+{
+  "dialogueId": "clue6_dialogue_7",
+  "characterName": "Police",
+  "dialogueText": "No blood detected.",
+  "dialogueChoices": [
+  ],
+  "dialogueChoicesId": [
+  ]
+}
+]
+}

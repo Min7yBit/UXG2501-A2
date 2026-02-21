@@ -1,0 +1,92 @@
+{
+"allDialogues":
+[
+{
+  "dialogueId": "clue5_intro",
+  "characterName": "Police",
+  "dialogueText": "A student wallet found near the victim’s body. Contains school ID.",
+  "dialogueChoices": [
+	"Is this Ryan’s wallet?"
+  ],
+  "dialogueChoicesId": [
+	"clue5_dialogue_1"
+  ]
+},
+
+{
+  "dialogueId": "clue5_dialogue_1",
+  "characterName": "Police",
+  "dialogueText": "Yes. It contains his student identification.",
+  "dialogueChoices": [
+  ],
+  "dialogueChoicesId": [
+	"clue5_dialogue_2"
+  ]
+},
+
+{
+  "dialogueId": "clue5_dialogue_2",
+  "characterName": "Prosecutor",
+  "dialogueText": "Where was it found?",
+  "dialogueChoices": [
+  ],
+  "dialogueChoicesId": [
+	"clue5_dialogue_3"
+  ]
+},
+
+{
+  "dialogueId": "clue5_dialogue_3",
+  "characterName": "Police",
+  "dialogueText": "Approximately one meter from the victim’s body.",
+  "dialogueChoices": [
+  ],
+  "dialogueChoicesId": [
+	"clue5_dialogue_4"
+  ]
+},
+
+{
+  "dialogueId": "clue5_dialogue_4",
+  "characterName": "Prosecutor",
+  "dialogueText": "Could it have fallen during the struggle?",
+  "dialogueChoices": [
+  ],
+  "dialogueChoicesId": [
+	"clue5_dialogue_5"
+  ]
+},
+
+{
+  "dialogueId": "clue5_dialogue_5",
+  "characterName": "Police",
+  "dialogueText": "That would be the logical assumption.",
+  "dialogueChoices": [
+  ],
+  "dialogueChoicesId": [
+	"clue5_dialogue_6"
+  ]
+},
+
+{
+  "dialogueId": "clue5_dialogue_6",
+  "characterName": "Prosecutor",
+  "dialogueText": "Is there blood on it?",
+  "dialogueChoices": [
+  ],
+  "dialogueChoicesId": [
+	"clue5_dialogue_7"
+  ]
+},
+
+{
+  "dialogueId": "clue5_dialogue_7",
+  "characterName": "Police",
+  "dialogueText": "There’s a small smear across the corner... just a faint trace. It looks like someone with a stained hand reached for it and missed.",
+  "dialogueChoices": [
+  ],
+  "dialogueChoicesId": [
+  ]
+}
+]
+}
