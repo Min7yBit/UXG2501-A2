@@ -89,7 +89,7 @@ public class PlayerInteract : MonoBehaviour
     /// <summary>
     /// this is only for editor to visualise the interact radius
     /// </summary>
-    private void OnDrawGizmos() 
+    private void OnDrawGizmosSelected() 
     {
         Gizmos.color = Color.magenta;
         Gizmos.DrawWireSphere(transform.position, interactRange);
