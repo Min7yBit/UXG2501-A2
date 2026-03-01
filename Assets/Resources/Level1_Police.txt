@@ -1,0 +1,216 @@
+{
+"allDialogues":
+[
+{
+  "dialogueId": "police_intro",
+  "characterName": "Police",
+  "dialogueText": "How may I help you?",
+  "dialogueChoices": [
+	"About the Scene",
+	"About the Victim",
+	"About the Suspect",
+	"About Evidence",
+	"About Timeline/Witnesses",
+	"That's all for now"
+  ],
+  "dialogueChoicesId": [
+	"police_question_1",
+	"police_question_2",
+	"police_question_3",
+	"police_question_4",
+	"police_question_5",
+	"police_exit"
+  ]
+},
+
+{
+  "dialogueId": "police_question_1",
+  "characterName": "Prosecutor",
+  "dialogueText": "About the Scene",
+  "dialogueChoices": [
+	"What happened here?",
+	"Did you find anything unusual"
+  ],
+  "dialogueChoicesId": [
+	"police_question_1_1",
+	"police_question_1_2"
+  ]
+},
+{
+  "dialogueId": "police_question_1_1",
+  "characterName": "Police",
+  "dialogueText": "Victim was found at approximately 6:12 AM in the alley behind the tuition centre. Six stab wounds to the torso. No signs of robbery. We believe it was a personal confrontation.",
+  "dialogueChoices": [
+	"Ask more questions"
+  ],
+  "dialogueChoicesId": [
+	"police_intro"
+  ]
+},
+{
+  "dialogueId": "police_question_1_2",
+  "characterName": "Police",
+  "dialogueText": "Aside from the number of wounds, not particularly. It’s a narrow alley, poorly lit. One flickering streetlamp. CCTV at the entrance caught a silhouette entering around 5:58 AM.",
+  "dialogueChoices": [
+	"Ask more questions"
+  ],
+  "dialogueChoicesId": [
+	"police_intro"
+  ]
+},
+
+{
+  "dialogueId": "police_question_2",
+  "characterName": "Prosecutor",
+  "dialogueText": "About the Victim",
+  "dialogueChoices": [
+	"Who is the victim, and what do we know about them?"
+  ],
+  "dialogueChoicesId": [
+	"police_question_2_1"	
+  ]
+},
+{
+  "dialogueId": "police_question_2_1",
+  "characterName": "Police",
+  "dialogueText": "Ethan, 16. Top student. Debate team. Teachers describe him as disciplined and ambitious.\nWe’ve heard some rumours about peer conflicts, but nothing formally reported.",
+  "dialogueChoices": [
+	"Ask more questions"
+  ],
+  "dialogueChoicesId": [
+	"police_intro"
+  ]
+},
+
+{
+  "dialogueId": "police_question_3",
+  "characterName": "Prosecutor",
+  "dialogueText": "About the Suspect",
+  "dialogueChoices": [
+	"Who is the main suspect?",
+	"What do you think was the motive behind this?",
+	"Have they said anything about the incident?"
+  ],
+  "dialogueChoicesId": [
+	"police_question_3_1",
+	"police_question_3_2",
+	"police_question_3_3"
+  ]
+},
+{
+  "dialogueId": "police_question_3_1",
+  "characterName": "Police",
+  "dialogueText": "Ryan. Same age. Previously filed a harassment complaint involving Ethan.",
+  "dialogueChoices": [
+	"Ask more questions"
+  ],
+  "dialogueChoicesId": [
+	"police_intro"
+  ]
+},
+{
+  "dialogueId": "police_question_3_2",
+  "characterName": "Police",
+  "dialogueText": "History of conflict. Ryan repeated a year and had ongoing disputes with the victim. We believe resentment built up.",
+  "dialogueChoices": [
+	"Ask more questions"
+  ],
+  "dialogueChoicesId": [
+	"police_intro"
+  ]
+},
+{
+  "dialogueId": "police_question_3_3",
+  "characterName": "Police",
+  "dialogueText": "He admitted he followed Ethan that morning. Claims they argued. But he insists he left before anything happened.",
+  "dialogueChoices": [
+	"Ask more questions"
+  ],
+  "dialogueChoicesId": [
+	"police_intro"
+  ]
+},
+
+{
+  "dialogueId": "police_question_4",
+  "characterName": "Prosecutor",
+  "dialogueText": "About Evidence",
+  "dialogueChoices": [
+	"What evidence do we have so far?",
+	"Does anything not fit the suspect’s story?"
+  ],
+  "dialogueChoicesId": [
+	"police_question_4_1",
+	"police_question_4_2"
+  ]
+},
+{
+  "dialogueId": "police_question_4_1",
+  "characterName": "Police",
+  "dialogueText": "Threatening message sent months ago. CCTV build matches Ryan’s frame. A kitchen knife missing from his home set — same type as the murder weapon.",
+  "dialogueChoices": [
+	"Ask more questions"
+  ],
+  "dialogueChoicesId": [
+	"police_intro"
+  ]
+},
+{
+  "dialogueId": "police_question_4_2",
+  "characterName": "Police",
+  "dialogueText": "He says he didn’t stab Ethan. But the timeline places him there. Though… we don’t have direct footage of the stabbing itself.",
+  "dialogueChoices": [
+	"Ask more questions"
+  ],
+  "dialogueChoicesId": [
+	"police_intro"
+  ]
+},
+
+{
+  "dialogueId": "police_question_5",
+  "characterName": "Prosecutor",
+  "dialogueText": "About Timeline/Witnesses",
+  "dialogueChoices": [
+	"When did this happen?",
+	"Were there other people around?"
+  ],
+  "dialogueChoicesId": [
+	"police_question_5_1",
+	"police_question_5_2"
+  ]
+},
+{
+  "dialogueId": "police_question_5_1",
+  "characterName": "Police",
+  "dialogueText": "Estimated time of death: between 5:55 AM and 6:05 AM.",
+  "dialogueChoices": [
+	"Ask more questions"
+  ],
+  "dialogueChoicesId": [
+	"police_intro"
+  ]
+},
+{
+  "dialogueId": "police_question_5_2",
+  "characterName": "Police",
+  "dialogueText": "CCTV only clearly captures one figure entering the alley. It’s low resolution. No clear facial ID. No confirmed second person… though the footage does cut out briefly.",
+  "dialogueChoices": [
+	"Ask more questions"
+  ],
+  "dialogueChoicesId": [
+	"police_intro"
+  ]
+},
+
+{
+  "dialogueId": "police_exit",
+  "characterName": "Police",
+  "dialogueText": "Understood. Let me know if you need anything else.",
+  "dialogueChoices": [
+  ],
+  "dialogueChoicesId": [
+  ]
+}
+]
+}

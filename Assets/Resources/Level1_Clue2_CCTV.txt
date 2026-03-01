@@ -1,0 +1,114 @@
+{
+"allDialogues":
+[
+{
+  "dialogueId": "clue2_intro",
+  "characterName": "Police",
+  "dialogueText": "Low-resolution footage. A male silhouette enters at 5:58 AM. Brief static interference at 6:03 AM lasting 12 seconds.",
+  "dialogueChoices": [
+	"Is this confirmed to be Ryan?"
+  ],
+  "dialogueChoicesId": [
+	"clue2_dialogue_1"
+  ]
+},
+
+{
+  "dialogueId": "clue2_dialogue_1",
+  "characterName": "Police",
+  "dialogueText": "The build and height are consistent with him.",
+  "dialogueChoices": [
+  ],
+  "dialogueChoicesId": [
+	"clue2_dialogue_2"
+  ]
+},
+
+{
+  "dialogueId": "clue2_dialogue_2",
+  "characterName": "Prosecutor",
+  "dialogueText": "Is the face identifiable?",
+  "dialogueChoices": [
+  ],
+  "dialogueChoicesId": [
+	"clue2_dialogue_3"
+  ]
+},
+
+{
+  "dialogueId": "clue2_dialogue_3",
+  "characterName": "Police",
+  "dialogueText": "No. Resolution is too low.",
+  "dialogueChoices": [
+  ],
+  "dialogueChoicesId": [
+	"clue2_dialogue_4"
+  ]
+},
+
+{
+  "dialogueId": "clue2_dialogue_4",
+  "characterName": "Prosecutor",
+  "dialogueText": "What happened during the static?",
+  "dialogueChoices": [
+  ],
+  "dialogueChoicesId": [
+	"clue2_dialogue_5"
+  ]
+},
+
+{
+  "dialogueId": "clue2_dialogue_5",
+  "characterName": "Police",
+  "dialogueText": "Signal interruption. The system is outdated.",
+  "dialogueChoices": [
+  ],
+  "dialogueChoicesId": [
+	"clue2_dialogue_6"
+  ]
+},
+
+{
+  "dialogueId": "clue2_dialogue_6",
+  "characterName": "Prosecutor",
+  "dialogueText": "Could someone have entered during the static?",
+  "dialogueChoices": [
+  ],
+  "dialogueChoicesId": [
+	"clue2_dialogue_7"
+  ]
+},
+
+{
+  "dialogueId": "clue2_dialogue_7",
+  "characterName": "Police",
+  "dialogueText": "It’s possible.",
+  "dialogueChoices": [
+  ],
+  "dialogueChoicesId": [
+	"clue2_dialogue_8"
+  ]
+},
+
+{
+  "dialogueId": "clue2_dialogue_8",
+  "characterName": "Prosecutor",
+  "dialogueText": "Does the footage show Ryan leaving?",
+  "dialogueChoices": [
+  ],
+  "dialogueChoicesId": [
+	"clue2_dialogue_9"
+  ]
+},
+
+{
+  "dialogueId": "clue2_dialogue_9",
+  "characterName": "Police",
+  "dialogueText": "A figure exits at 6:01 AM.",
+  "dialogueChoices": [
+  ],
+  "dialogueChoicesId": [
+  ]
+}
+]
+}

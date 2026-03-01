@@ -1,0 +1,92 @@
+{
+"allDialogues":
+[
+{
+  "dialogueId": "clue4_intro",
+  "characterName": "Police",
+  "dialogueText": "Clear shoeprint in blood leading toward alley exit.",
+  "dialogueChoices": [
+	"Does this match Ryan’s shoes?"
+  ],
+  "dialogueChoicesId": [
+	"clue4_dialogue_1"
+  ]
+},
+
+{
+  "dialogueId": "clue4_dialogue_1",
+  "characterName": "Police",
+  "dialogueText": "The tread is similar to a common sneaker pattern.",
+  "dialogueChoices": [
+  ],
+  "dialogueChoicesId": [
+	"clue4_dialogue_2"
+  ]
+},
+
+{
+  "dialogueId": "clue4_dialogue_2",
+  "characterName": "Prosecutor",
+  "dialogueText": "Is it a confirmed match?",
+  "dialogueChoices": [
+  ],
+  "dialogueChoicesId": [
+	"clue4_dialogue_3"
+  ]
+},
+
+{
+  "dialogueId": "clue4_dialogue_3",
+  "characterName": "Police",
+  "dialogueText": "Not conclusively.",
+  "dialogueChoices": [
+  ],
+  "dialogueChoicesId": [
+	"clue4_dialogue_4"
+  ]
+},
+
+{
+  "dialogueId": "clue4_dialogue_4",
+  "characterName": "Prosecutor",
+  "dialogueText": "Is the size consistent with Ryan?",
+  "dialogueChoices": [
+  ],
+  "dialogueChoicesId": [
+	"clue4_dialogue_5"
+  ]
+},
+
+{
+  "dialogueId": "clue4_dialogue_5",
+  "characterName": "Police",
+  "dialogueText": "Slightly smaller than his recorded shoe size.",
+  "dialogueChoices": [
+  ],
+  "dialogueChoicesId": [
+	"clue4_dialogue_6"
+  ]
+},
+
+{
+  "dialogueId": "clue4_dialogue_6",
+  "characterName": "Prosecutor",
+  "dialogueText": "Are there other prints?",
+  "dialogueChoices": [
+  ],
+  "dialogueChoicesId": [
+	"clue4_dialogue_7"
+  ]
+},
+
+{
+  "dialogueId": "clue4_dialogue_7",
+  "characterName": "Police",
+  "dialogueText": "There are partial overlapping prints underneath.",
+  "dialogueChoices": [
+  ],
+  "dialogueChoicesId": [
+  ]
+}
+]
+}
