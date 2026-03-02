@@ -87,7 +87,7 @@ public class DialogueSelector : MonoBehaviour
         dialogueChoicesTextList.Clear();
         dialogueChoicesIdList.Clear();
         index = 0;
-        nextText.text = "Next (E)";
+        nextText.text = "Next (Space)";
     }
     public void NextChoice()
     {
@@ -106,7 +106,7 @@ public class DialogueSelector : MonoBehaviour
         DialogueManager.Instance.Next(nextDialogue.characterName, nextDialogue.dialogueText, nextDialogue.dialogueChoices, nextDialogue.dialogueChoicesId, currentDialogueData);
         if (nextDialogue.dialogueChoicesId.Length == 0)
         {
-            nextText.text = "Okay (E)";
+            nextText.text = "Okay (Space)";
         }
     }
     private DialogueEntry FindNextDialogue(string dialogueId)

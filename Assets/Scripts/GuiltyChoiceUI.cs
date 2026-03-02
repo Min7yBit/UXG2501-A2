@@ -10,6 +10,9 @@ public class GuiltyChoiceUI : MonoBehaviour
     public Button notGuiltyButton;
     public Button closeButton;
     public TMP_Text resultText;
+    public bool canOpen = false;
+
+    public GameObject UImanager;
 
     [Header("Case Settings")]
     public bool isGuiltyCorrect;
@@ -17,7 +20,7 @@ public class GuiltyChoiceUI : MonoBehaviour
     void Start()
     {
         popupPanel.SetActive(false);
-
+        canOpen = false;
         guiltyButton.onClick.AddListener(() => MakeChoice(true));
         notGuiltyButton.onClick.AddListener(() => MakeChoice(false));
         closeButton.onClick.AddListener(ClosePopup);
@@ -25,6 +28,8 @@ public class GuiltyChoiceUI : MonoBehaviour
 
     public void OpenPopup(bool correctAnswer)
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         popupPanel.SetActive(true);
         resultText.text = "";
         isGuiltyCorrect = correctAnswer;
@@ -50,8 +55,19 @@ public class GuiltyChoiceUI : MonoBehaviour
         notGuiltyButton.interactable = false;
     }
 
+    void Update()
+    {
+        if (UImanager.GetComponent<UIManager>().hintsCount >= 8)
+            canOpen = true;
+
+        if (Input.GetKeyDown(KeyCode.F) && canOpen)
+            OpenPopup(true);
+    }
+
     void ClosePopup()
     {
         popupPanel.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }

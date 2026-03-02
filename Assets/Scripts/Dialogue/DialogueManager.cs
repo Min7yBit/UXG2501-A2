@@ -15,7 +15,7 @@ public class DialogueManager : MonoBehaviour
     public bool isDialogueActive {get ; private set;}
 
     [SerializeField] private KeyCode closeKey = KeyCode.Escape;
-    [SerializeField] private KeyCode nextKey = KeyCode.E;
+    [SerializeField] private KeyCode nextKey = KeyCode.Space;
     private bool close => Input.GetKeyDown(closeKey);
     private bool next => Input.GetKeyDown(nextKey);
 

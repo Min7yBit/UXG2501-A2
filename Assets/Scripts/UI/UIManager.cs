@@ -6,6 +6,7 @@ public class UIManager : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject winMenu;
     public GameObject hintsFound;
+    //public GameObject guiltyManager;
     //public Inventory playerInventory;
     //public CombineSystem combineSystem;
     public int hintsCount = 0;
@@ -58,6 +59,8 @@ public class UIManager : MonoBehaviour
     {
         if (hintsCount < 8)
             hintsCount++;
+        //if (hintsCount >= 8)
+        //    guiltyManager.SetActive(true);
 
         hintsFound.GetComponentInChildren<TMP_Text>().text = $"Hints Found: {hintsCount}/8";
     }
