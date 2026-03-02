@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb;
     private float rotationX;
 
-    private bool canMove = true;
+    public bool canMove = true;
     public bool CanMove { get => canMove; set => canMove = value; }
 
     // INPUT
@@ -142,7 +142,6 @@ public class PlayerMovement : MonoBehaviour
     void HandleFootstepsAndLanding()
     {
         bool grounded = IsGrounded();
-
         // LANDING
         if (!wasGrounded && grounded)
         {

@@ -3,97 +3,69 @@ using System.Collections.Generic;
 
 public class CameraControl : MonoBehaviour
 {
-    public enum CameraMode { FirstPerson, ThirdPerson, Fixed }
-    public CameraMode currentMode = CameraMode.ThirdPerson;
 
-    public List<Camera> thirdPersonCameras = new List<Camera>();
+    [Header("Target Transforms")]
+    public Transform pointA;
+    public Transform pointB;
 
-    public Camera firstPersonCam;
-    public Camera thirdPersonCam;
-    public Camera activeFixedCam;
-    public Camera cellFixedCam;
+    [Header("Settings")]
+    public float speed = 2f;
+    public bool lerpRotation = true;
+    public KeyCode triggerKey = KeyCode.Space;
 
-    [Header("Camera Switch SFX")]
-    public AudioSource audioSource;
+    private float _t = 0f;
+    private bool isPlaying = false;
+    private bool _goingForward = true;
 
-    public AudioClip fpvEnterSFX;
-    [Range(0f, 2f)] public float fpvEnterVolume = 1f;
-
-    public AudioClip tppEnterSFX;
-    [Range(0f, 2f)] public float tppEnterVolume = 1f;
-
-    public AudioClip fixedEnterSFX;
-    [Range(0f, 2f)] public float fixedEnterVolume = 1f;
+    public PlayerMovement playerMovement;
+    public ObjectRotationController rotationController;
 
     void Start()
     {
-        SetCameraMode(currentMode);
+        transform.SetParent(pointA);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-            SetCameraMode(CameraMode.FirstPerson);
-
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-            SetCameraMode(CameraMode.ThirdPerson);
-
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(triggerKey))
         {
-            SwitchToFixedCamera(cellFixedCam);
+            _goingForward = !_goingForward;
+            isPlaying = true;
+            transform.SetParent(null); // unparent while moving
+        }
+
+        if (!isPlaying) return;
+
+        _t = Mathf.MoveTowards(_t, _goingForward ? 1f : 0f, Time.deltaTime * speed);
+
+        transform.position = Vector3.Lerp(pointA.position, pointB.position, _t);
+
+        if (lerpRotation)
+            transform.rotation = Quaternion.Slerp(pointA.rotation, pointB.rotation, _t);
+
+        if (_t >= 1f)
+        {
+            isPlaying = false;
+            transform.SetParent(pointB); // child of B on arrival
+            playerMovement.CanMove = false;
+            rotationController.canRotate = true;
+        }
+        else if (_t <= 0f)
+        {
+            isPlaying = false;
+            transform.SetParent(pointA); // child of A on arrival
+            playerMovement.CanMove = true;
+            rotationController.canRotate = false;
         }
     }
 
-    public void SetCameraMode(CameraMode mode)
-    {
-        //  SFX When switching modes
-        if (mode != currentMode)
-        {
-            if (mode == CameraMode.FirstPerson)
-                PlaySFX(fpvEnterSFX, fpvEnterVolume);
 
-            else if (mode == CameraMode.ThirdPerson)
-                PlaySFX(tppEnterSFX, tppEnterVolume);
-
-            else if (mode == CameraMode.Fixed)
-                PlaySFX(fixedEnterSFX, fixedEnterVolume);
-        }
-
-        currentMode = mode;
-
-        // Enable the correct cameras
-        firstPersonCam.enabled = (mode == CameraMode.FirstPerson);
-        thirdPersonCam.enabled = (mode == CameraMode.ThirdPerson);
-
-        if (mode == CameraMode.Fixed && activeFixedCam != null)
-        {
-            activeFixedCam.enabled = true;
-        }
-        else
-        {
-            foreach (var cam in FindObjectsByType<Camera>(FindObjectsSortMode.None))
-            {
-                if (cam.CompareTag("FixedCamera"))
-                    cam.enabled = false;
-            }
-        }
-    }
-
-    public void SwitchToFixedCamera(Camera newCam)
-    {
-        if (activeFixedCam != null)
-            activeFixedCam.enabled = false;
-
-        activeFixedCam = newCam;
-        SetCameraMode(CameraMode.Fixed);
-    }
-
-    // --------------------
-    // Audio Helper
-    // --------------------
-    private void PlaySFX(AudioClip clip, float volume)
-    {
-        if (audioSource != null && clip != null)
-            audioSource.PlayOneShot(clip, volume);
-    }
+    //// --------------------
+    //// Audio Helper
+    //// --------------------
+    //private void PlaySFX(AudioClip clip, float volume)
+    //{
+    //    if (audioSource != null && clip != null)
+    //        audioSource.PlayOneShot(clip, volume);
+    //}
 }

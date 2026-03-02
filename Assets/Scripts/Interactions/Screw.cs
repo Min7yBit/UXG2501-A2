@@ -17,7 +17,6 @@ public class Screw : MonoBehaviour, IInteractable
     [SerializeField] private AudioClip screwRemoveSFX;     // assign sound clip
     [Range(0f, 2f)] public float screwVolume = 1f;
 
-    [SerializeField] private BedLeg bedLeg;
     private bool interactable = true;
 
     [Header("Inventory")]
@@ -54,7 +53,6 @@ public class Screw : MonoBehaviour, IInteractable
                 PlayScrewRemoveSFX();
 
                 interactable = false;
-                bedLeg.canRemove = true;
 
                 // Disable screw object
                 gameObject.SetActive(false);

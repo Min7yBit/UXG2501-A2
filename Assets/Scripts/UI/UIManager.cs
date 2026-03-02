@@ -56,7 +56,7 @@ public class UIManager : MonoBehaviour
 
     public void UpdateHintsCount()
     {
-        if (hintsCount < 3)
+        if (hintsCount < 8)
             hintsCount++;
 
         hintsFound.GetComponentInChildren<TMP_Text>().text = $"Hints Found: {hintsCount}/3";

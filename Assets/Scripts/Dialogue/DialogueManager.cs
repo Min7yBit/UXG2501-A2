@@ -19,6 +19,8 @@ public class DialogueManager : MonoBehaviour
     private bool close => Input.GetKeyDown(closeKey);
     private bool next => Input.GetKeyDown(nextKey);
 
+    public PlayerMovement playerMovement;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -51,6 +53,7 @@ public class DialogueManager : MonoBehaviour
         dialoguePortrait.sprite = GetPortrait(name);        
         dialogueSelector.AddDialogueChoice(dialogueChoices, dialogueChoicesId, dialogueData);
         dialogueBody.SetActive(true);
+        playerMovement.canMove = false;
     }
 
     public void HideDialogue()
@@ -61,6 +64,7 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = "";
         dialoguePortrait.sprite = null;
         dialogueSelector.ClearDialogueChoices();
+        playerMovement.canMove = true;
     }
 
     public void Next(string name, string dialogue, string[] dialogueChoices, string[] dialogueChoicesId, DialogueRoot dialogueData)

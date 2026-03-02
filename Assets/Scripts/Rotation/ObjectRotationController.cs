@@ -2,21 +2,23 @@ using UnityEngine;
 
 public class ObjectRotationController : MonoBehaviour
 {
-    private Camera camera;
     [SerializeField] private float raycastDistance = 3f;
-    [SerializeField] private PlayerMovement playerMovement;
 
     private ObjectRotation currentTarget;
+    public bool canRotate;
 
-    void Start()
+    public LayerMask layerMask;
+
+    private void Start()
     {
-        camera = Camera.main;
-        playerMovement = GetComponent<PlayerMovement>();
+        canRotate = false;
     }
 
     void Update()
     {
-        if (Physics.Raycast(camera.transform.position, camera.transform.forward, out RaycastHit hit, raycastDistance))
+        if (!canRotate) return;
+
+        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, raycastDistance, layerMask))
         {
             ObjectRotation rotatable = hit.collider.GetComponent<ObjectRotation>();
 
@@ -34,7 +36,6 @@ public class ObjectRotationController : MonoBehaviour
                 {
 
                     currentTarget.rotateAllowed = true;
-                    playerMovement.CanMove = false;
                 }
                 else
                 {
@@ -58,18 +59,17 @@ public class ObjectRotationController : MonoBehaviour
         {
             currentTarget.rotateAllowed = false;
             currentTarget = null;
-            playerMovement.CanMove = true;
         }
     }
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Camera cam = Camera.main;
         if (cam == null)
             return;
 
         Gizmos.color = Color.green;
-        Gizmos.DrawRay(cam.transform.position, cam.transform.forward * raycastDistance);
-        Gizmos.DrawWireSphere(cam.transform.position + cam.transform.forward * raycastDistance, 0.05f);
+        Gizmos.DrawRay(transform.position, transform.forward * raycastDistance);
+        Gizmos.DrawWireSphere(transform.position + transform.forward * raycastDistance, 0.05f);
     }
 }
