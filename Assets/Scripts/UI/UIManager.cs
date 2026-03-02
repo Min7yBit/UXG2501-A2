@@ -59,7 +59,7 @@ public class UIManager : MonoBehaviour
         if (hintsCount < 8)
             hintsCount++;
 
-        hintsFound.GetComponentInChildren<TMP_Text>().text = $"Hints Found: {hintsCount}/3";
+        hintsFound.GetComponentInChildren<TMP_Text>().text = $"Hints Found: {hintsCount}/8";
     }
 
     public void SetGameTime(bool active)
